@@ -115,6 +115,7 @@ extern "C" NCSError NCSEcwCompressOpen(NCSEcwCompressClient *pClient,
 		Info.szDatum = pClient->szDatum;
 		Info.szProjection = pClient->szProjection;
 		Info.eColorSpace = (NCSFileColorSpace)pClient->eCompressFormat;
+		Info.fCWRotationDegrees = 0.0;
 		pFile->SetFileInfo(Info);
 #ifndef ECW_COMPRESS_SDK_VERSION
 		CNCSJP2File::SetKeySize();
