@@ -37,7 +37,7 @@ and fixing GetFileViewSetInfo for the tiled case
 #include "NCSEcw.h"
 #include "../../NCSGDT2/NCSGDTEpsg.h"
 
-#define ECW_COMPRESS_SDK_LIMIT	((500 * 1024 * 1024) ^ ECW_COMPRESS_SDK_LIMIT_MASK)
+// #define ECW_COMPRESS_SDK_LIMIT	((5000 * 1024 * 1024) ^ ECW_COMPRESS_SDK_LIMIT_MASK)
 
 //////////////////////////////////////////////////////////////////////
 // Construction/Destruction
@@ -307,7 +307,7 @@ CNCSError CNCSJP2FileView::OpenForWrite(char *pURLPath, CNCSJPCIOStream *pStream
 	Close(true);
 	{
 		INT32 b;
-		INT32 nLimit = ECW_COMPRESS_SDK_LIMIT;
+		//INT32 nLimit = ECW_COMPRESS_SDK_LIMIT;
 		
 		/*
 		** Validate the parameters that were set by the client
@@ -334,6 +334,7 @@ CNCSError CNCSJP2FileView::OpenForWrite(char *pURLPath, CNCSJPCIOStream *pStream
 								 (m_eCellType != NCSCT_UINT8 && m_eCellType != NCSCT_UINT16 && m_eCellType != NCSCT_IEEE4)*/) {
 								 return(NCS_INVALID_PARAMETER);
 		}
+		/*
 		if((CNCSJP2File::sm_nKeySize ^ ECW_COMPRESS_SDK_LIMIT_MASK) == 0) {
 			UINT32 nMask = CNCSJP2File::sm_nKeySize;
 			if(((INT64)m_nWidth * (INT64)m_nHeight * (INT64)m_nNumberOfBands) > (nLimit ^ nMask)) {
@@ -344,6 +345,7 @@ CNCSError CNCSJP2FileView::OpenForWrite(char *pURLPath, CNCSJPCIOStream *pStream
 		} else {
 			CNCSJP2File::sm_nKeySize = ECW_COMPRESS_SDK_LIMIT_MASK;
 		}
+		*/
 		m_pFilename = NCSStrDup(pURLPath ? pURLPath : CHAR_STRING(pStream->GetName()));
 		
 #ifdef NCSJPC_ECW_SUPPORT

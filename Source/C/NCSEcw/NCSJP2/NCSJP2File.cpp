@@ -48,7 +48,7 @@
 
 // Initialise static
 CNCSJP2File::CNCSJP2FileVector CNCSJP2File::sm_Files;
-UINT32 CNCSJP2File::sm_nKeySize = ECW_COMPRESS_SDK_LIMIT_MASK;
+UINT32 CNCSJP2File::sm_nKeySize = 0; // ECW_COMPRESS_SDK_LIMIT_MASK;
 UINT32 CNCSJP2File::sm_nGeodataUsage = JP2_GEODATA_USE_GML_PCS;
 
 CNCSJPCGlobalLock::CNCSJPCGlobalLock() 

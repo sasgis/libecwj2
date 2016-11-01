@@ -61,7 +61,7 @@
 #include "NCSJPC.h"
 #endif // NCSJPC_H
 
-#define ECW_COMPRESS_SDK_LIMIT_MASK			0xfe43218a
+// #define ECW_COMPRESS_SDK_LIMIT_MASK			0xfe43218a
 #define UUID_LEN							16
 #define DEFAULT_GEODATA_PRECISION			0.000000001F
 
