@@ -48,30 +48,30 @@
 class NCSJPC_EXPORT_ALL CNCSJPCBuffer: public CNCSJPCRect {
 public:
 		/** Maximum UINT8 value */
-	static const UINT32 MAXUINT8;
+	static const UINT32 NCS_MAXUINT8;
 		/** Maximum UINT16 value */
-	static const UINT32 MAXUINT16;
+	static const UINT32 NCS_MAXUINT16;
 		/** Maximum UINT32 value */
-	static const UINT32 MAXUINT32;
+	static const UINT32 NCS_MAXUINT32;
 		/** Minimum UINT8 value */
-	static const UINT32 MINUINT8;
+	static const UINT32 NCS_MINUINT8;
 		/** Minimum UINT16 value */
-	static const UINT32 MINUINT16;
+	static const UINT32 NCS_MINUINT16;
 		/** Minimum UINT32 value */
-	static const UINT32 MINUINT32;
+	static const UINT32 NCS_MINUINT32;
 
 		/** Maximum INT8 value */
-	static const UINT32 MAXINT8;
+	static const UINT32 NCS_MAXINT8;
 		/** Maximum INT16 value */
-	static const UINT32 MAXINT16;
+	static const UINT32 NCS_MAXINT16;
 		/** Maximum INT32 value */
-	static const UINT32 MAXINT32;
+	static const UINT32 NCS_MAXINT32;
 		/** Minimum INT8 value */
-	static const INT32 MININT8;
+	static const INT32 NCS_MININT8;
 		/** Minimum INT16 value */
-	static const INT32 MININT16;
+	static const INT32 NCS_MININT16;
 		/** Minimum INT32 value */
-	static const INT32 MININT32;
+	static const INT32 NCS_MININT32;
 	
 	/**
 	 * SystemInfo class - Some basic system capabilities we care about.

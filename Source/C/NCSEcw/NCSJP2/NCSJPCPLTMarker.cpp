@@ -173,7 +173,7 @@ bool CNCSJPCPLTMarker::ParseLength(CNCSJPC &JPC, CNCSJPCIOStream &Stream, UINT16
 						nPrevHeaderLength = TMP.m_nHeaderLength;
 						TMP.m_nHeaderLength += (UINT32)nTotalHeaderLength;
 					}
-					if(nTotalHeaderLength > CNCSJPCBuffer::MAXUINT32) {
+					if(nTotalHeaderLength > CNCSJPCBuffer::NCS_MAXUINT32) {
 						// Too big to store cumulated length in the PacketLength struct, so 
 						// set it back to false and reparse the entire PLT
 						m_bCumulativeLengths = false;
@@ -202,7 +202,7 @@ bool CNCSJPCPLTMarker::ParseLength(CNCSJPC &JPC, CNCSJPCIOStream &Stream, UINT16
 					nPrevHeaderLength = TMP.m_nHeaderLength;
 					TMP.m_nHeaderLength += nTotalHeaderLength;
 				}
-				if(nTotalHeaderLength > CNCSJPCBuffer::MAXUINT32) {
+				if(nTotalHeaderLength > CNCSJPCBuffer::NCS_MAXUINT32) {
 					// Too big to store cumulated length in the PacketLength struct, so 
 					// set it back to false and reparse the entire PLT
 					m_bCumulativeLengths = false;

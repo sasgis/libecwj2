@@ -917,7 +917,7 @@ bool CNCSJPCT1Coder::Encode(NCSJPCSubBandType eSBType,
 
     int passno=0;
     int passtype;
-    INT32 nMax = CNCSJPCBuffer::MININT32;
+    INT32 nMax = CNCSJPCBuffer::NCS_MININT32;
 
     UINT32 nWidth = pDecBuf->GetWidth();
 	UINT32 nHeight = pDecBuf->GetHeight();
@@ -956,7 +956,7 @@ bool CNCSJPCT1Coder::Encode(NCSJPCSubBandType eSBType,
 				UINT32 nSubWidth = nWidth / 8;
 
 				__m128 mm7 = _mm_set1_ps(fRatio);
-				__m128i mm4 = _mm_set1_epi16((short)CNCSJPCBuffer::MININT16);
+				__m128i mm4 = _mm_set1_epi16((short)CNCSJPCBuffer::NCS_MININT16);
 
 				for(UINT32 y = 0; y < nHeight; y++) {
 					INT16 *pSrc = (INT16*)pDecBuf->GetPtr() + y * nDecStep;
@@ -1008,7 +1008,7 @@ bool CNCSJPCT1Coder::Encode(NCSJPCSubBandType eSBType,
 				UINT32 nSubWidth = nWidth / 4;
 				
 				__m128 mm7 = _mm_set1_ps(fRatio);
-				__m64 mm4 = _mm_set1_pi16((short)CNCSJPCBuffer::MININT16);
+				__m64 mm4 = _mm_set1_pi16((short)CNCSJPCBuffer::NCS_MININT16);
 
 				for(UINT32 y = 0; y < nHeight; y++) {
 					INT16 *pSrc = (INT16*)pDecBuf->GetPtr() + y * nDecStep;

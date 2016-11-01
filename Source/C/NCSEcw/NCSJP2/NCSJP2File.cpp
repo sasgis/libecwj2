@@ -137,7 +137,7 @@ CNCSJP2File::CNCSJP2File()
 	m_bCodestreamOnly = false;
 
 	m_eCompressionOrder = CNCSJPCProgressionOrderType::RPCL;
-	m_nDecompressionLayers = CNCSJPCBuffer::MAXUINT16;
+	m_nDecompressionLayers = CNCSJPCBuffer::NCS_MAXUINT16;
 
 	m_nNextLine = 0;
 	//Default geodata usage - was JP2_GEODATA_USE_WLD_GML_PCS

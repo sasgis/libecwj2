@@ -26,19 +26,19 @@
 
 //void * memcpy_amd(void *dest, const void *src, size_t n);
 
-const UINT32 CNCSJPCBuffer::MAXUINT8	= (unsigned)0xff;
-const UINT32 CNCSJPCBuffer::MAXUINT16	= (unsigned)0xffff;
-const UINT32 CNCSJPCBuffer::MAXUINT32	= (unsigned)0xffffffff;
-const UINT32 CNCSJPCBuffer::MINUINT8    = 0;
-const UINT32 CNCSJPCBuffer::MINUINT16   = 0;
-const UINT32 CNCSJPCBuffer::MINUINT32   = 0;
+const UINT32 CNCSJPCBuffer::NCS_MAXUINT8	= (unsigned)0xff;
+const UINT32 CNCSJPCBuffer::NCS_MAXUINT16	= (unsigned)0xffff;
+const UINT32 CNCSJPCBuffer::NCS_MAXUINT32	= (unsigned)0xffffffff;
+const UINT32 CNCSJPCBuffer::NCS_MINUINT8    = 0;
+const UINT32 CNCSJPCBuffer::NCS_MINUINT16   = 0;
+const UINT32 CNCSJPCBuffer::NCS_MINUINT32   = 0;
 
-const UINT32 CNCSJPCBuffer::MAXINT8     = 0x7f;
-const UINT32 CNCSJPCBuffer::MAXINT16    = 0x7fff;
-const UINT32 CNCSJPCBuffer::MAXINT32    = 0x7fffffff;
-const INT32 CNCSJPCBuffer::MININT8     = (-1 * (signed)CNCSJPCBuffer::MAXINT8 - 1);
-const INT32 CNCSJPCBuffer::MININT16    = (-1 * (signed)CNCSJPCBuffer::MAXINT16 - 1);
-const INT32 CNCSJPCBuffer::MININT32    = (-1 * (signed)CNCSJPCBuffer::MAXINT32 - 1);
+const UINT32 CNCSJPCBuffer::NCS_MAXINT8     = 0x7f;
+const UINT32 CNCSJPCBuffer::NCS_MAXINT16    = 0x7fff;
+const UINT32 CNCSJPCBuffer::NCS_MAXINT32    = 0x7fffffff;
+const INT32 CNCSJPCBuffer::NCS_MININT8     = (-1 * (signed)CNCSJPCBuffer::NCS_MAXINT8 - 1);
+const INT32 CNCSJPCBuffer::NCS_MININT16    = (-1 * (signed)CNCSJPCBuffer::NCS_MAXINT16 - 1);
+const INT32 CNCSJPCBuffer::NCS_MININT32    = (-1 * (signed)CNCSJPCBuffer::NCS_MAXINT32 - 1);
 
 const UINT32 CNCSJPCBuffer::AT_OWNER = (1 << 0);
 const UINT32 CNCSJPCBuffer::AT_CHILD = (1 << 1);
@@ -308,27 +308,27 @@ bool CNCSJPCBuffer::Clip(INT32 nMin, INT32 nMax)
 		switch(m_eType) {
 			case CNCSJPCBuffer::BT_INT16:
 					// Optimise some common cases 
-					if(nMin == MINUINT8 && nMax == MAXUINT8) {
+					if(nMin == NCS_MINUINT8 && nMax == NCS_MAXUINT8) {
 						// UINT8 range
 						for(x = 0; x < nWidth; x++) {
 							INT16 v = ((INT16*)m_pBuffer)[x];
 							if(v & 0xff00) { // Top bit is sign bit, so this tests for both >nMax & <nMin in one
-								if(v > (INT16)MAXUINT8) {
-									((INT16*)m_pBuffer)[x] = MAXUINT8;
-								} else if(v < (INT16)MINUINT8) {
-									((INT16*)m_pBuffer)[x] = MINUINT8;
+								if(v > (INT16)NCS_MAXUINT8) {
+									((INT16*)m_pBuffer)[x] = NCS_MAXUINT8;
+								} else if(v < (INT16)NCS_MINUINT8) {
+									((INT16*)m_pBuffer)[x] = NCS_MINUINT8;
 								}
 							}
 						}					
-					} else if(nMin == MININT8 && nMax == MAXINT8) {
+					} else if(nMin == NCS_MININT8 && nMax == NCS_MAXINT8) {
 						// INT8 range
 						for(x = 0; x < nWidth; x++) {
 							INT16 v = ((INT16*)m_pBuffer)[x];
 							if(v & 0xff80) { // Top bit is sign bit, so this tests for both >nMax & <nMin in one
-								if(v > (INT16)MAXINT8) {
-									((INT16*)m_pBuffer)[x] = MAXINT8;
-								} else if(v < (INT16)MININT8) {
-									((INT16*)m_pBuffer)[x] = MININT8;
+								if(v > (INT16)NCS_MAXINT8) {
+									((INT16*)m_pBuffer)[x] = NCS_MAXINT8;
+								} else if(v < (INT16)NCS_MININT8) {
+									((INT16*)m_pBuffer)[x] = NCS_MININT8;
 								}
 							}
 						}					
@@ -345,27 +345,27 @@ bool CNCSJPCBuffer::Clip(INT32 nMin, INT32 nMax)
 				break;
 			case CNCSJPCBuffer::BT_INT32:
 					// Optimise some common cases 
-					if(nMin == MINUINT16 && nMax == MAXUINT16) {
+					if(nMin == NCS_MINUINT16 && nMax == NCS_MAXUINT16) {
 						// UINT16 range
 						for(x = 0; x < nWidth; x++) {
 							INT32 v = ((INT32*)m_pBuffer)[x];
 							if(v & 0xffff0000) { // Top bit is sign bit, so this tests for both >nMax & <nMin in one
-								if(v > (INT32)MAXUINT16) {
-									((INT32*)m_pBuffer)[x] = MAXUINT16;
-								} else if(v < (INT32)MINUINT16) {
-									((INT32*)m_pBuffer)[x] = MINUINT16;
+								if(v > (INT32)NCS_MAXUINT16) {
+									((INT32*)m_pBuffer)[x] = NCS_MAXUINT16;
+								} else if(v < (INT32)NCS_MINUINT16) {
+									((INT32*)m_pBuffer)[x] = NCS_MINUINT16;
 								}
 							}
 						}					
-					} else if(nMin == MININT16 && nMax == MAXINT16) {
+					} else if(nMin == NCS_MININT16 && nMax == NCS_MAXINT16) {
 						// INT16 range
 						for(x = 0; x < nWidth; x++) {
 							INT32 v = ((INT32*)m_pBuffer)[x];
 							if(v & 0xffff8000) { // Top bit is sign bit, so this tests for both >nMax & <nMin in one
-								if(v > (INT32)MAXINT16) {
-									((INT32*)m_pBuffer)[x] = MAXINT16;
-								} else if(v < (INT32)MININT16) {
-									((INT32*)m_pBuffer)[x] = MININT16;
+								if(v > (INT32)NCS_MAXINT16) {
+									((INT32*)m_pBuffer)[x] = NCS_MAXINT16;
+								} else if(v < (INT32)NCS_MININT16) {
+									((INT32*)m_pBuffer)[x] = NCS_MININT16;
 								}
 							}
 						}					
@@ -403,13 +403,13 @@ bool CNCSJPCBuffer::Clip(IEEE4 fMin, IEEE4 fMax)
 					return(Clip(NCSCeil(fMin), NCSFloor(fMax)));
 				break;
 			case CNCSJPCBuffer::BT_IEEE4:
-					if(fMin == MINUINT8 && fMax == MAXUINT8) {
+					if(fMin == NCS_MINUINT8 && fMax == NCS_MAXUINT8) {
 						for(x = 0; x < nWidth; x++) {
 							IEEE4 v = ((IEEE4*)m_pBuffer)[x];
-							if(v > MAXUINT8) {
-								((IEEE4*)m_pBuffer)[x] = MAXUINT8;
-							} else if(v < MINUINT8) {
-								((IEEE4*)m_pBuffer)[x] = MINUINT8;
+							if(v > NCS_MAXUINT8) {
+								((IEEE4*)m_pBuffer)[x] = NCS_MAXUINT8;
+							} else if(v < NCS_MINUINT8) {
+								((IEEE4*)m_pBuffer)[x] = NCS_MINUINT8;
 							}		
 						}					
 					} else {
