@@ -31,7 +31,7 @@
 #endif // WIN32
 
 #if defined(MACOSX)
-#include "Carbon/Carbon.h"
+//#include "Carbon/Carbon.h"
 #include "NCSThread.h"
 #endif
 
@@ -86,7 +86,7 @@ BOOL CALLBACK PasswordDlgProc(HWND hDlg, UINT iMsg, WPARAM wParam, LPARAM lParam
 #define DLLNAME "NCScnet.dll"
 #endif
 
-#elif defined(MACOSX)
+#elif defined(BOGUS)
 
 typedef struct {
     WindowRef theWindow;
@@ -219,7 +219,7 @@ bool NCSGetPasswordDlg( const char *pszSite, const char *pszRealm, string &sUser
 		sPassword = "";
 		return false;
 	}
-#elif defined(MACOSX)
+#elif defined(BOGUS)
     OSStatus err;
     IBNibRef theNib;
     WindowRef theWindow;

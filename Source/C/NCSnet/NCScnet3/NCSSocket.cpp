@@ -187,11 +187,11 @@ CNCSSocket::CNCSSocket(const int handle)
 	//init();
 	struct sockaddr_in info;
 #if defined(POSIX) && !defined(HPUX)
-#	ifdef MACOSX
-	int tempSize = sizeof(struct sockaddr);
-#	else
+//#	ifdef MACOSX
+//	int tempSize = sizeof(struct sockaddr);
+//#	else
 	socklen_t tempSize = sizeof(struct sockaddr);
-#	endif
+//#	endif
 #else
 	int tempSize = sizeof(struct sockaddr);
 #endif

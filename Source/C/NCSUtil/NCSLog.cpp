@@ -166,7 +166,7 @@ void CNCSLog::Log(char *pFile, int nLine, CNCSLog::NCSLogLevel eLevel, char *pFo
 		while(p > pFile && *(p - 1) != '\\') {
 			p--;
 		}
-		_snprintf(buf, sizeof(buf), "%d : File %s, Line %ld, ", (int)eLevel, p, nLine);
+		_snprintf(buf, sizeof(buf), "%d : File %s, Line %d, ", (int)eLevel, p, nLine);
 		int nLen = (int)strlen(buf);
 
 #ifdef POSIX

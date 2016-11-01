@@ -46,6 +46,11 @@
 pthread_attr_t sAttributes;
 #endif
 
+#ifdef MACOSX
+// Native thread calls needed to work around pthread issues
+#include <mach/thread_act.h>
+#endif 
+
 /*
  ** Internal thread info.
  */
@@ -426,8 +431,14 @@ void NCSThreadFreeInfo(NCSThread *pThread)
 #elif defined(PALM)
 #elif defined(MACINTOSH)
 #elif defined(POSIX)
+#ifndef MACOSX
 				void *value_pair = (void*)NULL;
 				pthread_join(ppThreadInfos[i]->thread, &value_pair);
+#else
+				// Work around non-POSIX pthreads implementation
+				mach_port_t machThread = pthread_mach_thread_np(ppThreadInfos[i]->thread);
+				thread_terminate (machThread);
+#endif // MACOSX
 				NCSMutexFini(&ppThreadInfos[i]->mSuspendMutex);
 #else
 #error NCSThreadFreeInfo()

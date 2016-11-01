@@ -472,10 +472,10 @@ void NCSecwConfig(BOOLEAN bNoTextureDither,BOOLEAN bForceFileReopen)
 	if (!pNCSEcwInfo) {
 		NCSecwInitInternal();
 	}
-	//pNCSEcwInfo->bNoTextureDither = bNoTextureDither;
-	//pNCSEcwInfo->nForceFileReopen = bForceFileReopen;
-	NCSecwSetConfig(NCSCFG_TEXTURE_DITHER, (bNoTextureDither == TRUE) ? FALSE : TRUE);
-	NCSecwSetConfig(NCSCFG_FORCE_FILE_REOPEN, bForceFileReopen);
+	pNCSEcwInfo->bNoTextureDither = bNoTextureDither;
+	pNCSEcwInfo->nForceFileReopen = bForceFileReopen;
+	//NCSecwSetConfig(NCSCFG_TEXTURE_DITHER, (bNoTextureDither == TRUE) ? FALSE : TRUE);
+	//NCSecwSetConfig(NCSCFG_FORCE_FILE_REOPEN, bForceFileReopen);
 }
 
 /*******************************************************

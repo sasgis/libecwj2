@@ -41,6 +41,7 @@
 
 #ifdef MACOSX
 #	include "CoreServices/CoreServices.h"
+#   include <unistd.h>
 #endif
 
 #ifndef _WIN32_WCE
@@ -1084,6 +1085,10 @@ char *NCSGetTempDirectory(void)
 
 	return(NCSStrDup(""));
 
+#elif defined POSIX
+
+	return(NCSStrDup("/tmp"));
+
 #elif defined MACOSX
 
         FSRef tempRef;
@@ -1097,10 +1102,6 @@ char *NCSGetTempDirectory(void)
          
 
         return( NCSStrDup(szPath) );
-
-#elif defined POSIX
-
-	return(NCSStrDup("/tmp"));
 
 #else	/* PALM */
 	char *szTmpDir = getenv("TMP");

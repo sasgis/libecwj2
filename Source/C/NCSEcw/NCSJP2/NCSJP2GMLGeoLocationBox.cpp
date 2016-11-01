@@ -109,7 +109,7 @@ CNCSError CNCSJP2File::CNCSJP2GMLGeoLocationBox::Parse(class CNCSJP2File &JP2Fil
 			if(OriginPoint && OriginPoint->Attribute("gml:id") && !stricmp(OriginPoint->Attribute("gml:id"), "JPEG2000_Origin")) {
 				const char *pTxt = OriginPoint->Attribute("srsName");
 				if(pTxt) {
-					nResults += sscanf(pTxt, "epsg:%ld", &nEPSGCode);
+					nResults += sscanf(pTxt, "epsg:%u", &nEPSGCode);
 					bSRSAttributePresent = true;
 				}
 				TiXmlText *Coords = docHandle.FirstChild("JPEG2000_GeoLocation").FirstChild("gml:RectifiedGrid").FirstChild("gml:origin").FirstChild("gml:Point").FirstChild("gml:coordinates").FirstChild().Text();
@@ -183,7 +183,7 @@ CNCSError CNCSJP2File::CNCSJP2GMLGeoLocationBox::Parse(class CNCSJP2File &JP2Fil
 				{
 					char szEPSG[32];
 					*szEPSG = '\0';
-					sprintf(szEPSG,"epsg:%ld",nEPSGCode);
+					sprintf(szEPSG,"epsg:%u",nEPSGCode);
 					m_GMLFileInfo.szProjection = NCSStrDup(szEPSG);
 					m_GMLFileInfo.szDatum = NCSStrDup(szEPSG);
 				}
@@ -236,13 +236,13 @@ CNCSError CNCSJP2File::CNCSJP2GMLGeoLocationBox::FormatXML(char *pBuf, UINT32 nB
 		char szSRSName[32];
 		*szSRSName = '\0';
 		UINT32 nEPSGCode = Epsg.GetEPSG(m_GMLFileInfo.szProjection, m_GMLFileInfo.szDatum);
-		if (nEPSGCode) sprintf(szSRSName," srsName=\"epsg:%ld\"",nEPSGCode);
+		if (nEPSGCode) sprintf(szSRSName," srsName=\"epsg:%u\"",nEPSGCode);
 		else if (strnicmp(m_GMLFileInfo.szProjection,"epsg:",5) == 0) //we have an unknown EPSG
 		{
 			char *pColon = strchr(m_GMLFileInfo.szProjection,':');
 			pColon++;
 			nEPSGCode = atoi(pColon); //grab EPSG code
-			sprintf(szSRSName," srsName=\"epsg:%ld\"",nEPSGCode);
+			sprintf(szSRSName," srsName=\"epsg:%u\"",nEPSGCode);
 		}
 		double dRegistrationX = m_GMLFileInfo.fOriginX;
 		double dRegistrationY = m_GMLFileInfo.fOriginY;

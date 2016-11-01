@@ -71,7 +71,7 @@ char *CNCSError::GetErrorMessage(char *pFormat, ...)
 {
 	char buf[1024];
 
-	snprintf(buf, sizeof(buf), "An error has occurred: Error %ld \"%s\" %s file \"%s\" line %ld", m_eError, NCSGetErrorText(m_eError), m_pText ? m_pText : "", m_pFile, m_nLine);
+	snprintf(buf, sizeof(buf), "An error has occurred: Error %d \"%s\" %s file \"%s\" line %d", m_eError, NCSGetErrorText(m_eError), m_pText ? m_pText : "", m_pFile, m_nLine);
 	
 	if(pFormat) {
 		char buf2[1024];

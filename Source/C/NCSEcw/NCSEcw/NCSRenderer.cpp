@@ -1084,12 +1084,12 @@ NCSError CNCSRenderer::ReadImage(INT32 nWidth, INT32 nHeight)
 		
 #elif defined(MACINTOSH) || defined(MACOSX) // Check if realloc is successful.
 		UINT8 *pTemp;
-		pTemp = (UINT8 *)NCSRealloc(m_pRGBTripletsLocal, nWidth*nHeight*3, 1);
+		pTemp = (UINT8 *)NCSRealloc(m_pRGBALocal, nWidth*nHeight*3, 1);
 		if( !pTemp ) {
 			return NCS_COULDNT_ALLOC_MEMORY;
 		}
 		else {
-			m_pRGBTripletsLocal = pTemp;
+			m_pRGBALocal = pTemp;
 		}
 #endif
 	}
@@ -2043,7 +2043,7 @@ if (bChangeInSize == TRUE || nPrevDCBitDepth != m_nDCBitDepth || m_bCreateNewDIB
 		case 32:
 #ifndef NCS_HIST_AND_LUT_SUPPORT
 				for(nLine = 0; nLine < nHeight; nLine++) {
-					UINT8	*pRGBTriplets = (UINT8*)&(m_pRGBTriplets[nWidth * 3 * nLine]);
+					UINT8	*pRGBTriplets = (UINT8*)&(m_pRGBALocal[nWidth * 3 * nLine]);
 					UINT32	*pImagePtr32 = (UINT32*)&(m_pBitmapImage[WIDTHBYTES(nWidth * 32) * nLine]);
 
 					for(nCell = 0; nCell < nWidth; nCell++) {
@@ -2116,7 +2116,7 @@ if (bChangeInSize == TRUE || nPrevDCBitDepth != m_nDCBitDepth || m_bCreateNewDIB
 		default:
 #ifndef NCS_HIST_AND_LUT_SUPPORT
 				for(nLine = 0; nLine < nHeight; nLine++) {
-					UINT8 *pRGBTriplets = (UINT8*)&(m_pRGBTriplets[nWidth * 3 * nLine]);
+					UINT8 *pRGBTriplets = (UINT8*)&(m_pRGBALocal[nWidth * 3 * nLine]);
 					UINT8 *pImagePtr8 = (UINT8*)&(m_pBitmapImage[WIDTHBYTES(nWidth * 24) * nLine]);
 
 					memcpy(pImagePtr8, pRGBTriplets, nWidth * 3);
@@ -2159,7 +2159,7 @@ if (bChangeInSize == TRUE || nPrevDCBitDepth != m_nDCBitDepth || m_bCreateNewDIB
 		case 16:
 #ifndef NCS_HIST_AND_LUT_SUPPORT
 					for(nLine = 0; nLine < nHeight; nLine++) {
-						UINT8 *pRGBTriplets = (UINT8*)&(m_pRGBTriplets[nWidth * 3 * nLine]);
+						UINT8 *pRGBTriplets = (UINT8*)&(m_pRGBALocal[nWidth * 3 * nLine]);
 						UINT16 *pImagePtr16 = (UINT16*)&(m_pBitmapImage[WIDTHBYTES(nWidth * 16) * nLine]);
 
 						for(nCell = 0; nCell < nWidth; nCell++) {
@@ -2431,7 +2431,7 @@ BOOLEAN CNCSRenderer::CreatePixMapAndPallete( GrafPtr pGPtr, INT32 nWidth, INT32
 		switch(m_nDCBitDepth) {
 		case 32:
 				for(nLine = 0; nLine < nHeight; nLine++) {
-					UINT8	*pRGBTriplets = (UINT8*)&(m_pRGBTriplets[nWidth * 3 * nLine]);
+					UINT8	*pRGBTriplets = (UINT8*)&(m_pRGBALocal[nWidth * 3 * nLine]);
 					index = nLine*nBytesPerRow;
 					for(j=0, i=0; (j < nBytesPerRow) && (i < (nWidth * 3)); j+=4, i+=3) {
 						offBaseAddr[index+j] = 0;
@@ -2445,7 +2445,7 @@ BOOLEAN CNCSRenderer::CreatePixMapAndPallete( GrafPtr pGPtr, INT32 nWidth, INT32
 /*		case 24:	// other bit depths not tested and probably don't work
 		default:
 				for(nLine = 0; nLine < nHeight; nLine++) {
-					UINT8 *pRGBTriplets = (UINT8*)&(m_pRGBTriplets[nWidth * 3 * nLine]);
+					UINT8 *pRGBTriplets = (UINT8*)&(m_pRGBALocal[nWidth * 3 * nLine]);
 					UINT8 *pImagePtr8 = (UINT8*)&(offBaseAddr[WIDTHBYTES(nWidth * 24) * nLine]);
 
 					memcpy(pImagePtr8, pRGBTriplets, nWidth * 3);
@@ -2454,7 +2454,7 @@ BOOLEAN CNCSRenderer::CreatePixMapAndPallete( GrafPtr pGPtr, INT32 nWidth, INT32
 
 		case 16:
 				for(nLine = 0; nLine < nHeight; nLine++) {
-					UINT8 *pRGBTriplets = (UINT8*)&(m_pRGBTriplets[nWidth * 3 * nLine]);
+					UINT8 *pRGBTriplets = (UINT8*)&(m_pRGBALocal[nWidth * 3 * nLine]);
 					UINT16 *pImagePtr16 = (UINT16*)&(offBaseAddr[WIDTHBYTES(nWidth * 16) * nLine]);
 
 					for(nCell = 0; nCell < nWidth; nCell++) {
@@ -2468,7 +2468,7 @@ BOOLEAN CNCSRenderer::CreatePixMapAndPallete( GrafPtr pGPtr, INT32 nWidth, INT32
 
 		case 15:
 				for(nLine = 0; nLine < nHeight; nLine++) {
-					UINT8 *pRGBTriplets = (UINT8*)&(m_pRGBTriplets[nWidth * 3 * nLine]);
+					UINT8 *pRGBTriplets = (UINT8*)&(m_pRGBALocal[nWidth * 3 * nLine]);
 					UINT16 *pImagePtr16 = (UINT16*)&(offBaseAddr[WIDTHBYTES(nWidth * 16) * nLine]);
 
 					for(nCell = 0; nCell < nWidth; nCell++) {
@@ -2482,7 +2482,7 @@ BOOLEAN CNCSRenderer::CreatePixMapAndPallete( GrafPtr pGPtr, INT32 nWidth, INT32
 
 		case 8:
 				for(nLine = 0; nLine < nHeight; nLine++) {
-					UINT8	*pRGBTriplets = (UINT8*)&(m_pRGBTriplets[nWidth * 3 * nLine]);
+					UINT8	*pRGBTriplets = (UINT8*)&(m_pRGBALocal[nWidth * 3 * nLine]);
 					UINT8	*pImagePtr8 = (UINT8*)&(offBaseAddr[WIDTHBYTES(nWidth * 8) * nLine]);
 
 					for(nCell = 0; nCell < nWidth; nCell++) {

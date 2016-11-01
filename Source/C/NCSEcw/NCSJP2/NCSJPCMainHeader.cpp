@@ -432,7 +432,7 @@ bool CNCSJPCMainHeader::OpenEncoderFiles(bool bWrite)
 	for(INT32 r = 0; r < m_COD.m_SPcod.m_nLevels + 1; r++) {
 		m_EncoderFiles[r] = new CNCSJPCFileIOStream();
 	
-		sprintf(szRelTmpDir, "%s" NCS_FILE_SEP "r%ldp.tmp", 
+		sprintf(szRelTmpDir, "%s" NCS_FILE_SEP "r%dp.tmp", 
 							m_pTmpDir, r);
 		if(!bWrite) {
 			((CNCSJPCFileIOStream*)m_EncoderFiles[r])->SetIOCacheSize(0);

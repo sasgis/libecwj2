@@ -1773,11 +1773,11 @@ bool CNCSJPCResolution::SD_2D_OUTPUT4(ContextID nCtx,
 		//Step0-1 == 2State.
 		//
 
-		UINT32 n = 0;
+		INT32 n = 0;
 		nWidth = NCSCeilDiv(nWidth, 2);
 
-		UINT32 n2n = n * 2 - 2;
-			
+		INT32 n2n = n * 2 - 2;
+		
 		INT32 nPrevVert01 = pSrc1Down[n2n] - NCSFloorDiv(pSrc0[n2n] + pSrc2Down[n2n], 2);
 		INT32 nPrevVert11 = pSrc1Down[n2n+1] - NCSFloorDiv(pSrc0[n2n+1] + pSrc2Down[n2n+1], 2);
 		INT32 nPrevVert00 = pSrc0[n2n] + NCSFloorDiv(pSrc1Up[n2n] - NCSFloorDiv(pSrc2Up[n2n] + pSrc0[n2n], 2) + nPrevVert01 + 2, 4);
@@ -1788,7 +1788,7 @@ bool CNCSJPCResolution::SD_2D_OUTPUT4(ContextID nCtx,
 		INT32 nVert01 = pSrc1Down[n2n] - NCSFloorDiv(pSrc0[n2n] + pSrc2Down[n2n], 2);
 		INT32 nVert00 = pSrc0[n2n] + NCSFloorDiv(pSrc1Up[n2n] - NCSFloorDiv(pSrc2Up[n2n] + pSrc0[n2n], 2) + nVert01 + 2, 4);
 
-		for(; n < nWidth; n++) {
+		for(; n < (INT32)nWidth; n++) {
 			n2n = 2 * n;
 
 			INT32 nVert11 = pSrc1Down[n2n+1] - NCSFloorDiv(pSrc0[n2n+1] + pSrc2Down[n2n+1], 2);

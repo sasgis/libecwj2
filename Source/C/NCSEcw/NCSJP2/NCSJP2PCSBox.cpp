@@ -810,7 +810,7 @@ CNCSError CNCSJP2File::CNCSJP2PCSBox::ProcessGeoTIFFInfo()
 						//be rolled back into NCSGDTEpsg
 						{
 							char szEPSG[ECW_MAX_PROJECTION_LEN];
-							sprintf(szEPSG,"epsg:%ld", p->v.nValue);
+							sprintf(szEPSG,"epsg:%u", p->v.nValue);
 							m_PCSFileInfo.szProjection = NCSStrDup(szEPSG);
 							m_PCSFileInfo.szDatum = NCSStrDup(szEPSG);
 						}

@@ -133,20 +133,12 @@ struct tm {
 #  define USE_C               1
 #endif
 
-#if defined(__sgi__) || defined(__sgi) || defined(__powerpc__) || defined(sparc) || defined(__ppc__)
-#   define USE_BIG_ENDIAN      1
-#endif
-
-#if TARGET_CPU_PPC
-#   define USE_BIG_ENDIAN   1
-#endif
-
-#ifdef macintosh
-#   define USE_BIG_ENDIAN      1
-#endif
-
-#ifdef WORDS_BIGENDIAN
-#   define USE_BIG_ENDIAN      1
+#ifdef __BIG_ENDIAN__
+  #define WORDS_BIGENDIAN 1
+  #define USE_BIG_ENDIAN 1
+#else
+  #undef WORDS_BIGENDIAN
+  #undef USE_BIG_ENDIAN
 #endif
 
 #if defined(__OpenBSD__) || defined(__NetBSD__) || defined(__FreeBSD__)
@@ -176,14 +168,16 @@ typedef unsigned int DWORD, *LPDWORD;
 typedef int BOOL;
 typedef char *LPSTR;
 #else
+#undef BOOL
 #define BOOL int
+#undef LPSTR
 #define LPSTR char*
 #endif // !MACOSX /**[01]*/
 
 typedef void *LPVOID;
 typedef void* LCMSHANDLE;
 
-
+#undef ZeroMemory
 #define ZeroMemory(p,l)     memset((p),0,(l))
 #define CopyMemory(d,s,l)   memcpy((d),(s),(l))
 #define FAR
@@ -200,7 +194,9 @@ typedef void* LCMSHANDLE;
 #       define TRUE  1
 #endif
 
+#undef LOWORD
 #define LOWORD(l)    ((WORD)(l))
+#undef HIWORD
 #define HIWORD(l)    ((WORD)((DWORD)(l) >> 16))
 
 #ifndef MAX_PATH
