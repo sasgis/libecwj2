@@ -32,7 +32,7 @@
 #endif
 #endif
 
-class __declspec( dllexport ) CNCSExtent 
+class NCS_EXPORT CNCSExtent 
 {
 public:
 	CNCSExtent();

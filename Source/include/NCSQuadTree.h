@@ -65,7 +65,7 @@ typedef enum NCSQTreeAlg{		// The algorithm used to construct the Quad Tree
 
 typedef NCSError (*NCSQTreeNodeFunc)(NCSQTreeNode *pNode, void *pInfo);
 
-class __declspec( dllexport ) CNCSQTree  
+class NCS_EXPORT CNCSQTree  
 {
 
 public:
