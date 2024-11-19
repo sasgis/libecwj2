@@ -1,5 +1,7 @@
 /lib/*
 /obj/*
+/Source/NCSBuildQmake/.vs/*
+/Source/NCSBuildQmake/x64/*
 *.ncb
 *.suo
 *.db

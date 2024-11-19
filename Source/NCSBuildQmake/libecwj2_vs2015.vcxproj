@@ -1,0 +1,576 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="14.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="RelWithCpp|Win32">
+      <Configuration>RelWithCpp</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="RelWithCpp|x64">
+      <Configuration>RelWithCpp</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectName>libecwj2</ProjectName>
+    <ProjectGuid>{CE03F0D0-A85E-3621-B56D-E38B4B121EF8}</ProjectGuid>
+    <RootNamespace>libecwj2</RootNamespace>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='RelWithCpp|Win32'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <PlatformToolset>v140</PlatformToolset>
+    <UseOfMfc>false</UseOfMfc>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <PlatformToolset>v140</PlatformToolset>
+    <UseOfMfc>false</UseOfMfc>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <PlatformToolset>v140</PlatformToolset>
+    <UseOfMfc>false</UseOfMfc>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='RelWithCpp|x64'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <PlatformToolset>v140</PlatformToolset>
+    <UseOfMfc>false</UseOfMfc>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <PlatformToolset>v140</PlatformToolset>
+    <UseOfMfc>false</UseOfMfc>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <PlatformToolset>v140</PlatformToolset>
+    <UseOfMfc>false</UseOfMfc>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='RelWithCpp|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="$(VCTargetsPath)Microsoft.CPP.UpgradeFromVC71.props" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="$(VCTargetsPath)Microsoft.CPP.UpgradeFromVC71.props" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="$(VCTargetsPath)Microsoft.CPP.UpgradeFromVC71.props" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='RelWithCpp|x64'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="$(VCTargetsPath)Microsoft.CPP.UpgradeFromVC71.props" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="$(VCTargetsPath)Microsoft.CPP.UpgradeFromVC71.props" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="$(VCTargetsPath)Microsoft.CPP.UpgradeFromVC71.props" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup>
+    <_ProjectFileVersion>14.0.25420.1</_ProjectFileVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <OutDir>.\</OutDir>
+    <IntDir>..\..\obj\win32-msvc.net\shared\</IntDir>
+    <IgnoreImportLibrary>true</IgnoreImportLibrary>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <OutDir>.\</OutDir>
+    <IntDir>Debug\</IntDir>
+    <IgnoreImportLibrary>true</IgnoreImportLibrary>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='RelWithCpp|Win32'">
+    <OutDir>$(Configuration)\</OutDir>
+    <IntDir>$(Configuration)\</IntDir>
+    <IgnoreImportLibrary>true</IgnoreImportLibrary>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <OutDir>$(Platform)\$(Configuration)\</OutDir>
+    <IntDir>$(Platform)\$(Configuration)\</IntDir>
+    <IgnoreImportLibrary>true</IgnoreImportLibrary>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <OutDir>$(Platform)\$(Configuration)\</OutDir>
+    <IntDir>$(Platform)\$(Configuration)\</IntDir>
+    <IgnoreImportLibrary>true</IgnoreImportLibrary>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='RelWithCpp|x64'">
+    <OutDir>$(Platform)\$(Configuration)\</OutDir>
+    <IntDir>$(Platform)\$(Configuration)\</IntDir>
+    <IgnoreImportLibrary>true</IgnoreImportLibrary>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Midl>
+      <WarningLevel>0</WarningLevel>
+      <DefaultCharType>Unsigned</DefaultCharType>
+      <EnableErrorChecks>None</EnableErrorChecks>
+    </Midl>
+    <ClCompile>
+      <AdditionalOptions>-Zm200 -GX -w34100 -w34189 %(AdditionalOptions)</AdditionalOptions>
+      <Optimization>MaxSpeed</Optimization>
+      <AdditionalIncludeDirectories>..\..\Source\include;..\..\Source\C\NCSEcw\lcms\include;.;C:\Qt\3.3.4Evaluation\mkspecs\win32-msvc.net;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>QT_NO_DEBUG;NDEBUG;_WINDOWS;UNICODE;WIN32;NCSECW_STATIC_LIBS;_MBCS;_UNICODE;LIBECWJ2;QT_DLL;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessToFile>false</PreprocessToFile>
+      <PreprocessSuppressLineNumbers>false</PreprocessSuppressLineNumbers>
+      <ExceptionHandling>Sync</ExceptionHandling>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <BufferSecurityCheck>false</BufferSecurityCheck>
+      <WarningLevel>Level3</WarningLevel>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <DebugInformationFormat />
+      <DisableSpecificWarnings>4996;%(DisableSpecificWarnings)</DisableSpecificWarnings>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ResourceCompile>
+    <Link>
+      <AdditionalDependencies>imagehlp.lib;version.lib;Crypt32.lib;shlwapi.lib;ws2_32.lib;kernel32.lib;user32.lib;gdi32.lib;comdlg32.lib;advapi32.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;imm32.lib;winmm.lib;wsock32.lib;winspool.lib;delayimp.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <OutputFile>..\..\lib\libecwj2.dll</OutputFile>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <ModuleDefinitionFile>libecwj2.def</ModuleDefinitionFile>
+      <DelayLoadDLLs>comdlg32.dll;oleaut32.dll;winmm.dll;wsock32.dll;winspool.dll;%(DelayLoadDLLs)</DelayLoadDLLs>
+      <GenerateDebugInformation>false</GenerateDebugInformation>
+      <ProgramDatabaseFile />
+      <SubSystem>Windows</SubSystem>
+      <BaseAddress>0x39D00000</BaseAddress>
+      <RandomizedBaseAddress>false</RandomizedBaseAddress>
+      <DataExecutionPrevention />
+    </Link>
+    <PostBuildEvent>
+      <Message>
+      </Message>
+      <Command>
+      </Command>
+    </PostBuildEvent>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Midl>
+      <WarningLevel>0</WarningLevel>
+      <DefaultCharType>Unsigned</DefaultCharType>
+      <EnableErrorChecks>None</EnableErrorChecks>
+    </Midl>
+    <ClCompile>
+      <AdditionalOptions>-Zm200 -GX -w34100 -w34189 %(AdditionalOptions)</AdditionalOptions>
+      <Optimization>MaxSpeed</Optimization>
+      <AdditionalIncludeDirectories>..\..\Source\include;..\..\Source\C\NCSEcw\lcms\include;.;C:\Qt\3.3.4Evaluation\mkspecs\win32-msvc.net;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>_WINDOWS;UNICODE;WIN32;_MBCS;_UNICODE;LIBECWJ2;QT_DLL;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessToFile>false</PreprocessToFile>
+      <PreprocessSuppressLineNumbers>false</PreprocessSuppressLineNumbers>
+      <MinimalRebuild>true</MinimalRebuild>
+      <ExceptionHandling>Sync</ExceptionHandling>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <BufferSecurityCheck>false</BufferSecurityCheck>
+      <AssemblerListingLocation>Debug\</AssemblerListingLocation>
+      <ObjectFileName>Debug\</ObjectFileName>
+      <ProgramDataBaseFileName>.\</ProgramDataBaseFileName>
+      <WarningLevel>Level3</WarningLevel>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ResourceCompile>
+    <Link>
+      <AdditionalDependencies>imagehlp.lib;version.lib;Crypt32.lib;shlwapi.lib;ws2_32.lib;kernel32.lib;user32.lib;gdi32.lib;comdlg32.lib;advapi32.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;imm32.lib;winmm.lib;wsock32.lib;winspool.lib;delayimp.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <OutputFile>Debug\\libecwj2.dll</OutputFile>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <ModuleDefinitionFile>libecwj2.def</ModuleDefinitionFile>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <ProgramDatabaseFile />
+      <SubSystem>Windows</SubSystem>
+      <BaseAddress>0x39D00000</BaseAddress>
+      <RandomizedBaseAddress>false</RandomizedBaseAddress>
+      <DataExecutionPrevention />
+    </Link>
+    <PostBuildEvent>
+      <Message>Copy libecwj2.dll to ..\..\bin</Message>
+      <Command>copy  "$(TargetPath)" "..\..\bin"</Command>
+    </PostBuildEvent>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='RelWithCpp|Win32'">
+    <Midl>
+      <WarningLevel>0</WarningLevel>
+      <DefaultCharType>Unsigned</DefaultCharType>
+      <EnableErrorChecks>None</EnableErrorChecks>
+    </Midl>
+    <ClCompile>
+      <AdditionalOptions>-Zm200 -GX -w34100 -w34189 %(AdditionalOptions)</AdditionalOptions>
+      <Optimization>MaxSpeed</Optimization>
+      <AdditionalIncludeDirectories>..\..\Source\include;..\..\Source\C\NCSEcw\lcms\include;.;C:\Qt\3.3.4Evaluation\mkspecs\win32-msvc.net;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>QT_NO_DEBUG;NDEBUG;_WINDOWS;UNICODE;WIN32;_MBCS;_UNICODE;LIBECWJ2;QT_DLL;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessToFile>false</PreprocessToFile>
+      <PreprocessSuppressLineNumbers>false</PreprocessSuppressLineNumbers>
+      <ExceptionHandling>Sync</ExceptionHandling>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <BufferSecurityCheck>false</BufferSecurityCheck>
+      <AssemblerListingLocation>..\..\obj\win32-msvc.net\shared\</AssemblerListingLocation>
+      <ObjectFileName>..\..\obj\win32-msvc.net\shared\</ObjectFileName>
+      <ProgramDataBaseFileName>.\</ProgramDataBaseFileName>
+      <WarningLevel>Level3</WarningLevel>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <DebugInformationFormat />
+      <DisableSpecificWarnings>4996;%(DisableSpecificWarnings)</DisableSpecificWarnings>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ResourceCompile>
+    <Link>
+      <AdditionalDependencies>imagehlp.lib;version.lib;Crypt32.lib;shlwapi.lib;ws2_32.lib;kernel32.lib;user32.lib;gdi32.lib;comdlg32.lib;advapi32.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;imm32.lib;winmm.lib;wsock32.lib;winspool.lib;delayimp.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <OutputFile>..\..\lib\libecwj2.dll</OutputFile>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <ModuleDefinitionFile>libecwj2.def</ModuleDefinitionFile>
+      <DelayLoadDLLs>comdlg32.dll;oleaut32.dll;winmm.dll;wsock32.dll;winspool.dll;%(DelayLoadDLLs)</DelayLoadDLLs>
+      <GenerateDebugInformation>false</GenerateDebugInformation>
+      <ProgramDatabaseFile />
+      <SubSystem>Windows</SubSystem>
+      <BaseAddress>0x39D00000</BaseAddress>
+      <RandomizedBaseAddress>false</RandomizedBaseAddress>
+      <DataExecutionPrevention />
+    </Link>
+    <PostBuildEvent>
+      <Message>Copy libecwj2.dll to ..\..\bin</Message>
+      <Command>copy  "$(TargetPath)" "..\..\bin"</Command>
+    </PostBuildEvent>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <Midl>
+      <WarningLevel>0</WarningLevel>
+      <DefaultCharType>Unsigned</DefaultCharType>
+      <TargetEnvironment>X64</TargetEnvironment>
+      <EnableErrorChecks>None</EnableErrorChecks>
+    </Midl>
+    <ClCompile>
+      <AdditionalOptions>-Zm200 /EHsc /wd4996 /wd4100 /wd4189 %(AdditionalOptions)</AdditionalOptions>
+      <Optimization>MaxSpeed</Optimization>
+      <AdditionalIncludeDirectories>..\..\Source\include;..\..\Source\C\NCSEcw\lcms\include;.;C:\Qt\3.3.4Evaluation\mkspecs\win32-msvc.net;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>QT_NO_DEBUG;NDEBUG;_WINDOWS;UNICODE;WIN64;WIN32;NCSECW_STATIC_LIBS;_MBCS;_UNICODE;LIBECWJ2;QT_DLL;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessToFile>false</PreprocessToFile>
+      <PreprocessSuppressLineNumbers>false</PreprocessSuppressLineNumbers>
+      <ExceptionHandling>Sync</ExceptionHandling>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <BufferSecurityCheck>false</BufferSecurityCheck>
+      <WarningLevel>Level3</WarningLevel>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <DebugInformationFormat />
+      <DisableSpecificWarnings>
+      </DisableSpecificWarnings>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ResourceCompile>
+    <Link>
+      <AdditionalDependencies>imagehlp.lib;version.lib;Crypt32.lib;shlwapi.lib;ws2_32.lib;kernel32.lib;user32.lib;gdi32.lib;comdlg32.lib;advapi32.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;imm32.lib;winmm.lib;wsock32.lib;winspool.lib;delayimp.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <OutputFile>..\..\lib\libecwj2.dll</OutputFile>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <ModuleDefinitionFile>libecwj2.def</ModuleDefinitionFile>
+      <DelayLoadDLLs>%(DelayLoadDLLs)</DelayLoadDLLs>
+      <GenerateDebugInformation>false</GenerateDebugInformation>
+      <ProgramDatabaseFile />
+      <SubSystem>Windows</SubSystem>
+      <BaseAddress>0x39D00000</BaseAddress>
+      <RandomizedBaseAddress>true</RandomizedBaseAddress>
+      <DataExecutionPrevention />
+      <TargetMachine>MachineX64</TargetMachine>
+    </Link>
+    <PostBuildEvent>
+      <Message>
+      </Message>
+      <Command>
+      </Command>
+    </PostBuildEvent>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <Midl>
+      <WarningLevel>0</WarningLevel>
+      <DefaultCharType>Unsigned</DefaultCharType>
+      <TargetEnvironment>X64</TargetEnvironment>
+      <EnableErrorChecks>None</EnableErrorChecks>
+    </Midl>
+    <ClCompile>
+      <AdditionalOptions>-Zm200 -GX -w34100 -w34189 %(AdditionalOptions)</AdditionalOptions>
+      <Optimization>MaxSpeed</Optimization>
+      <AdditionalIncludeDirectories>..\..\Source\include;..\..\Source\C\NCSEcw\lcms\include;.;C:\Qt\3.3.4Evaluation\mkspecs\win32-msvc.net;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>_WINDOWS;UNICODE;WIN32;_MBCS;_UNICODE;LIBECWJ2;QT_DLL;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessToFile>false</PreprocessToFile>
+      <PreprocessSuppressLineNumbers>false</PreprocessSuppressLineNumbers>
+      <MinimalRebuild>true</MinimalRebuild>
+      <ExceptionHandling>Sync</ExceptionHandling>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <BufferSecurityCheck>false</BufferSecurityCheck>
+      <AssemblerListingLocation>Debug\</AssemblerListingLocation>
+      <ObjectFileName>Debug\</ObjectFileName>
+      <ProgramDataBaseFileName>.\</ProgramDataBaseFileName>
+      <WarningLevel>Level3</WarningLevel>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ResourceCompile>
+    <Link>
+      <AdditionalDependencies>imagehlp.lib;version.lib;Crypt32.lib;shlwapi.lib;ws2_32.lib;kernel32.lib;user32.lib;gdi32.lib;comdlg32.lib;advapi32.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;imm32.lib;winmm.lib;wsock32.lib;winspool.lib;delayimp.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <OutputFile>Debug\\libecwj2.dll</OutputFile>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <ModuleDefinitionFile>libecwj2.def</ModuleDefinitionFile>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <ProgramDatabaseFile />
+      <SubSystem>Windows</SubSystem>
+      <BaseAddress>0x39D00000</BaseAddress>
+      <RandomizedBaseAddress>false</RandomizedBaseAddress>
+      <DataExecutionPrevention />
+      <TargetMachine>MachineX64</TargetMachine>
+    </Link>
+    <PostBuildEvent>
+      <Message>Copy libecwj2.dll to ..\..\bin</Message>
+      <Command>copy  "$(TargetPath)" "..\..\bin"</Command>
+    </PostBuildEvent>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='RelWithCpp|x64'">
+    <Midl>
+      <WarningLevel>0</WarningLevel>
+      <DefaultCharType>Unsigned</DefaultCharType>
+      <TargetEnvironment>X64</TargetEnvironment>
+      <EnableErrorChecks>None</EnableErrorChecks>
+    </Midl>
+    <ClCompile>
+      <AdditionalOptions>-Zm200 -GX -w34100 -w34189 %(AdditionalOptions)</AdditionalOptions>
+      <Optimization>MaxSpeed</Optimization>
+      <AdditionalIncludeDirectories>..\..\Source\include;..\..\Source\C\NCSEcw\lcms\include;.;C:\Qt\3.3.4Evaluation\mkspecs\win32-msvc.net;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>QT_NO_DEBUG;NDEBUG;_WINDOWS;UNICODE;WIN32;_MBCS;_UNICODE;LIBECWJ2;QT_DLL;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessToFile>false</PreprocessToFile>
+      <PreprocessSuppressLineNumbers>false</PreprocessSuppressLineNumbers>
+      <ExceptionHandling>Sync</ExceptionHandling>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <BufferSecurityCheck>false</BufferSecurityCheck>
+      <AssemblerListingLocation>..\..\obj\win32-msvc.net\shared\</AssemblerListingLocation>
+      <ObjectFileName>..\..\obj\win32-msvc.net\shared\</ObjectFileName>
+      <ProgramDataBaseFileName>.\</ProgramDataBaseFileName>
+      <WarningLevel>Level3</WarningLevel>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <DebugInformationFormat />
+      <DisableSpecificWarnings>4996;%(DisableSpecificWarnings)</DisableSpecificWarnings>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ResourceCompile>
+    <Link>
+      <AdditionalDependencies>imagehlp.lib;version.lib;Crypt32.lib;shlwapi.lib;ws2_32.lib;kernel32.lib;user32.lib;gdi32.lib;comdlg32.lib;advapi32.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;imm32.lib;winmm.lib;wsock32.lib;winspool.lib;delayimp.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <OutputFile>..\..\lib\libecwj2.dll</OutputFile>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <ModuleDefinitionFile>libecwj2.def</ModuleDefinitionFile>
+      <DelayLoadDLLs>comdlg32.dll;oleaut32.dll;winmm.dll;wsock32.dll;winspool.dll;%(DelayLoadDLLs)</DelayLoadDLLs>
+      <GenerateDebugInformation>false</GenerateDebugInformation>
+      <ProgramDatabaseFile />
+      <SubSystem>Windows</SubSystem>
+      <BaseAddress>0x39D00000</BaseAddress>
+      <RandomizedBaseAddress>false</RandomizedBaseAddress>
+      <DataExecutionPrevention />
+      <TargetMachine>MachineX64</TargetMachine>
+    </Link>
+    <PostBuildEvent>
+      <Message>Copy libecwj2.dll to ..\..\bin</Message>
+      <Command>copy  "$(TargetPath)" "..\..\bin"</Command>
+    </PostBuildEvent>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="..\C\NCSEcw\lcms\src\cmscnvrt.c" />
+    <ClCompile Include="..\C\NCSEcw\lcms\src\cmserr.c" />
+    <ClCompile Include="..\C\NCSEcw\lcms\src\cmsgamma.c" />
+    <ClCompile Include="..\C\NCSEcw\lcms\src\cmsgmt.c" />
+    <ClCompile Include="..\C\NCSEcw\lcms\src\cmsintrp.c" />
+    <ClCompile Include="..\C\NCSEcw\lcms\src\cmsio1.c" />
+    <ClCompile Include="..\C\NCSEcw\lcms\src\cmslut.c" />
+    <ClCompile Include="..\C\NCSEcw\lcms\src\cmsmatsh.c" />
+    <ClCompile Include="..\C\NCSEcw\lcms\src\cmsmtrx.c" />
+    <ClCompile Include="..\C\NCSEcw\lcms\src\cmsnamed.c" />
+    <ClCompile Include="..\C\NCSEcw\lcms\src\cmspack.c" />
+    <ClCompile Include="..\C\NCSEcw\lcms\src\cmspcs.c" />
+    <ClCompile Include="..\C\NCSEcw\lcms\src\cmssamp.c" />
+    <ClCompile Include="..\C\NCSEcw\lcms\src\cmsvirt.c" />
+    <ClCompile Include="..\C\NCSEcw\lcms\src\cmswtpnt.c" />
+    <ClCompile Include="..\C\NCSEcw\lcms\src\cmsxform.c" />
+    <ClCompile Include="..\C\NCSEcw\NCSEcw\NCSAffineTransform.cpp" />
+    <ClCompile Include="..\C\NCSEcw\NCSEcw\NCSBlockFile.cpp" />
+    <ClCompile Include="..\C\NCSEcw\NCSEcw\ncscbm.c" />
+    <ClCompile Include="..\C\NCSEcw\NCSEcw\ncscbmidwt.c" />
+    <ClCompile Include="..\C\NCSEcw\NCSEcw\ncscbmnet.c" />
+    <ClCompile Include="..\C\NCSEcw\NCSEcw\ncscbmopen.c" />
+    <ClCompile Include="..\C\NCSEcw\NCSEcw\ncscbmpurge.c" />
+    <ClCompile Include="..\C\NCSEcw\NCSEcw\NCSEcw.cpp" />
+    <ClCompile Include="..\C\NCSEcw\NCSEcw\NCSFile.cpp" />
+    <ClCompile Include="..\C\NCSEcw\NCSEcw\NCSHuffmanCoder.cpp" />
+    <ClCompile Include="..\C\NCSEcw\NCSEcw\NCSOutputFile.cpp" />
+    <ClCompile Include="..\C\NCSEcw\NCSEcw\NCSRenderer.cpp" />
+    <ClCompile Include="..\C\NCSEcw\NCSEcw\NCSWorldFile.cpp" />
+    <ClCompile Include="..\C\NCSEcw\NCSJP2\NCSJP2.cpp" />
+    <ClCompile Include="..\C\NCSEcw\NCSJP2\NCSJP2BitsPerComponentBox.cpp" />
+    <ClCompile Include="..\C\NCSEcw\NCSJP2\NCSJP2Box.cpp" />
+    <ClCompile Include="..\C\NCSEcw\NCSJP2\NCSJP2CaptureResolutionBox.cpp" />
+    <ClCompile Include="..\C\NCSEcw\NCSJP2\NCSJP2ChannelDefinitionBox.cpp" />
+    <ClCompile Include="..\C\NCSEcw\NCSJP2\NCSJP2ColorSpecificationBox.cpp" />
+    <ClCompile Include="..\C\NCSEcw\NCSJP2\NCSJP2ComponentMappingBox.cpp" />
+    <ClCompile Include="..\C\NCSEcw\NCSJP2\NCSJP2ContiguousCodestreamBox.cpp" />
+    <ClCompile Include="..\C\NCSEcw\NCSJP2\NCSJP2DataEntryURLBox.cpp" />
+    <ClCompile Include="..\C\NCSEcw\NCSJP2\NCSJP2DefaultDisplayResolutionBox.cpp" />
+    <ClCompile Include="..\C\NCSEcw\NCSJP2\NCSJP2File.cpp" />
+    <ClCompile Include="..\C\NCSEcw\NCSJP2\NCSJP2FileTypeBox.cpp" />
+    <ClCompile Include="..\C\NCSEcw\NCSJP2\NCSJP2FileView.cpp" />
+    <ClCompile Include="..\C\NCSEcw\NCSJP2\NCSJP2GMLGeoLocationBox.cpp" />
+    <ClCompile Include="..\C\NCSEcw\NCSJP2\NCSJP2HeaderBox.cpp" />
+    <ClCompile Include="..\C\NCSEcw\NCSJP2\NCSJP2ImageHeaderBox.cpp" />
+    <ClCompile Include="..\C\NCSEcw\NCSJP2\NCSJP2IntellectualPropertyBox.cpp" />
+    <ClCompile Include="..\C\NCSEcw\NCSJP2\NCSJP2PaletteBox.cpp" />
+    <ClCompile Include="..\C\NCSEcw\NCSJP2\NCSJP2PCSBox.cpp" />
+    <ClCompile Include="..\C\NCSEcw\NCSJP2\NCSJP2ResolutionBox.cpp" />
+    <ClCompile Include="..\C\NCSEcw\NCSJP2\NCSJP2SignatureBox.cpp" />
+    <ClCompile Include="..\C\NCSEcw\NCSJP2\NCSJP2SuperBox.cpp" />
+    <ClCompile Include="..\C\NCSEcw\NCSJP2\NCSJP2UUIDBox.cpp" />
+    <ClCompile Include="..\C\NCSEcw\NCSJP2\NCSJP2UUIDInfoBox.cpp" />
+    <ClCompile Include="..\C\NCSEcw\NCSJP2\NCSJP2UUIDListBox.cpp" />
+    <ClCompile Include="..\C\NCSEcw\NCSJP2\NCSJP2WorldBox.cpp" />
+    <ClCompile Include="..\C\NCSEcw\NCSJP2\NCSJP2XMLBox.cpp" />
+    <ClCompile Include="..\C\NCSEcw\NCSJP2\NCSJPC.cpp" />
+    <ClCompile Include="..\C\NCSEcw\NCSJP2\NCSJPCBuffer.cpp" />
+    <ClCompile Include="..\C\NCSEcw\NCSJP2\NCSJPCCOCMarker.cpp" />
+    <ClCompile Include="..\C\NCSEcw\NCSJP2\NCSJPCCodeBlock.cpp" />
+    <ClCompile Include="..\C\NCSEcw\NCSJP2\NCSJPCCodingStyleParameter.cpp" />
+    <ClCompile Include="..\C\NCSEcw\NCSJP2\NCSJPCCODMarker.cpp" />
+    <ClCompile Include="..\C\NCSEcw\NCSJP2\NCSJPCCOMMarker.cpp" />
+    <ClCompile Include="..\C\NCSEcw\NCSJP2\NCSJPCComponent.cpp" />
+    <ClCompile Include="..\C\NCSEcw\NCSJP2\NCSJPCComponentDepthType.cpp" />
+    <ClCompile Include="..\C\NCSEcw\NCSJP2\NCSJPCCRGMarker.cpp" />
+    <ClCompile Include="..\C\NCSEcw\NCSJP2\NCSJPCDCShiftNode.cpp" />
+    <ClCompile Include="..\C\NCSEcw\NCSJP2\NCSJPCDump.cpp" />
+    <ClCompile Include="..\C\NCSEcw\NCSJP2\NCSJPCEcwpIOStream.cpp" />
+    <ClCompile Include="..\C\NCSEcw\NCSJP2\NCSJPCEOCMarker.cpp" />
+    <ClCompile Include="..\C\NCSEcw\NCSJP2\NCSJPCEPHMarker.cpp" />
+    <ClCompile Include="..\C\NCSEcw\NCSJP2\NCSJPCFileIOStream.cpp" />
+    <ClCompile Include="..\C\NCSEcw\NCSJP2\NCSJPCICCNode.cpp" />
+    <ClCompile Include="..\C\NCSEcw\NCSJP2\NCSJPCIOStream.cpp" />
+    <ClCompile Include="..\C\NCSEcw\NCSJP2\NCSJPCMainHeader.cpp" />
+    <ClCompile Include="..\C\NCSEcw\NCSJP2\NCSJPCMarker.cpp" />
+    <ClCompile Include="..\C\NCSEcw\NCSJP2\NCSJPCMCTNode.cpp" />
+    <ClCompile Include="..\C\NCSEcw\NCSJP2\NCSJPCMemoryIOStream.cpp" />
+    <ClCompile Include="..\C\NCSEcw\NCSJP2\NCSJPCMQCoder.cpp" />
+    <ClCompile Include="..\C\NCSEcw\NCSJP2\NCSJPCNode.cpp" />
+    <ClCompile Include="..\C\NCSEcw\NCSJP2\NCSJPCNodeTiler.cpp" />
+    <ClCompile Include="..\C\NCSEcw\NCSJP2\NCSJPCPacket.cpp" />
+    <ClCompile Include="..\C\NCSEcw\NCSJP2\NCSJPCPacketLengthType.cpp" />
+    <ClCompile Include="..\C\NCSEcw\NCSJP2\NCSJPCPaletteNode.cpp" />
+    <ClCompile Include="..\C\NCSEcw\NCSJP2\NCSJPCPLMMarker.cpp" />
+    <ClCompile Include="..\C\NCSEcw\NCSJP2\NCSJPCPLTMarker.cpp" />
+    <ClCompile Include="..\C\NCSEcw\NCSJP2\NCSJPCPOCMarker.cpp" />
+    <ClCompile Include="..\C\NCSEcw\NCSJP2\NCSJPCPPMMarker.cpp" />
+    <ClCompile Include="..\C\NCSEcw\NCSJP2\NCSJPCPPTMarker.cpp" />
+    <ClCompile Include="..\C\NCSEcw\NCSJP2\NCSJPCPrecinct.cpp" />
+    <ClCompile Include="..\C\NCSEcw\NCSJP2\NCSJPCProgression.cpp" />
+    <ClCompile Include="..\C\NCSEcw\NCSJP2\NCSJPCProgressionOrderType.cpp" />
+    <ClCompile Include="..\C\NCSEcw\NCSJP2\NCSJPCQCCMarker.cpp" />
+    <ClCompile Include="..\C\NCSEcw\NCSJP2\NCSJPCQCDMarker.cpp" />
+    <ClCompile Include="..\C\NCSEcw\NCSJP2\NCSJPCQuantizationParameter.cpp" />
+    <ClCompile Include="..\C\NCSEcw\NCSJP2\NCSJPCResample.cpp" />
+    <ClCompile Include="..\C\NCSEcw\NCSJP2\NCSJPCResolution.cpp" />
+    <ClCompile Include="..\C\NCSEcw\NCSJP2\NCSJPCRGNMarker.cpp" />
+    <ClCompile Include="..\C\NCSEcw\NCSJP2\NCSJPCSegment.cpp" />
+    <ClCompile Include="..\C\NCSEcw\NCSJP2\NCSJPCSIZMarker.cpp" />
+    <ClCompile Include="..\C\NCSEcw\NCSJP2\NCSJPCSOCMarker.cpp" />
+    <ClCompile Include="..\C\NCSEcw\NCSJP2\NCSJPCSODMarker.cpp" />
+    <ClCompile Include="..\C\NCSEcw\NCSJP2\NCSJPCSOPMarker.cpp" />
+    <ClCompile Include="..\C\NCSEcw\NCSJP2\NCSJPCSOTMarker.cpp" />
+    <ClCompile Include="..\C\NCSEcw\NCSJP2\NCSJPCSubBand.cpp" />
+    <ClCompile Include="..\C\NCSEcw\NCSJP2\NCSJPCT1Coder.cpp" />
+    <ClCompile Include="..\C\NCSEcw\NCSJP2\NCSJPCTagTree.cpp" />
+    <ClCompile Include="..\C\NCSEcw\NCSJP2\NCSJPCTilePartHeader.cpp" />
+    <ClCompile Include="..\C\NCSEcw\NCSJP2\NCSJPCTLMMarker.cpp" />
+    <ClCompile Include="..\C\NCSEcw\NCSJP2\NCSJPCYCbCrNode.cpp" />
+    <ClCompile Include="..\C\NCSEcw\shared_src\build_pyr.c" />
+    <ClCompile Include="..\C\NCSEcw\shared_src\collapse_pyr.c" />
+    <ClCompile Include="..\C\NCSEcw\shared_src\compress.cpp" />
+    <ClCompile Include="..\C\NCSEcw\shared_src\ecw_open.c" />
+    <ClCompile Include="..\C\NCSEcw\shared_src\ecw_read.c" />
+    <ClCompile Include="..\C\NCSEcw\shared_src\fileio_compress.c" />
+    <ClCompile Include="..\C\NCSEcw\shared_src\fileio_decompress.c" />
+    <ClCompile Include="..\C\NCSEcw\shared_src\pack.c" />
+    <ClCompile Include="..\C\NCSEcw\shared_src\qmf_util.c" />
+    <ClCompile Include="..\C\NCSEcw\shared_src\quantize.c" />
+    <ClCompile Include="..\C\NCSEcw\shared_src\unpack.c" />
+    <ClCompile Include="..\C\NCSGDT2\NCSGDTEpsg.cpp" />
+    <ClCompile Include="..\C\NCSGDT2\NCSGDTEPSGKey.cpp" />
+    <ClCompile Include="..\C\NCSGDT2\NCSGDTLocation.cpp" />
+    <ClCompile Include="..\C\NCSnet\NCScnet2\cnet2util.c" />
+    <ClCompile Include="..\C\NCSnet\NCScnet2\connect.c" />
+    <ClCompile Include="..\C\NCSnet\NCScnet2\NCScnet.c" />
+    <ClCompile Include="..\C\NCSnet\NCScnet2\NCSWinHttp.c" />
+    <ClCompile Include="..\C\NCSnet\NCScnet2\packet.c" />
+    <ClCompile Include="..\C\NCSUtil\CNCSBase64Coder.cpp" />
+    <ClCompile Include="..\C\NCSUtil\CNCSMetabaseEdit.cpp" />
+    <ClCompile Include="..\C\NCSUtil\CNCSMultiSZ.cpp" />
+    <ClCompile Include="..\C\NCSUtil\dynamiclib.c" />
+    <ClCompile Include="..\C\NCSUtil\error.c" />
+    <ClCompile Include="..\C\NCSUtil\exception_catch.c" />
+    <ClCompile Include="..\C\NCSUtil\file.c" />
+    <ClCompile Include="..\C\NCSUtil\log.cpp" />
+    <ClCompile Include="..\C\NCSUtil\main.c" />
+    <ClCompile Include="..\C\NCSUtil\malloc.c" />
+    <ClCompile Include="..\C\NCSUtil\mutex.c" />
+    <ClCompile Include="..\C\NCSUtil\NCSBase64.cpp" />
+    <ClCompile Include="..\C\NCSUtil\NCSCoordinateConverter.cpp" />
+    <ClCompile Include="..\C\NCSUtil\NCSCoordinateSystem.cpp" />
+    <ClCompile Include="..\C\NCSUtil\NCSCoordinateTransform.cpp" />
+    <ClCompile Include="..\C\NCSUtil\NCSCrypto.cpp" />
+    <ClCompile Include="..\C\NCSUtil\NCSError.cpp" />
+    <ClCompile Include="..\C\NCSUtil\NCSEvent.cpp" />
+    <ClCompile Include="..\C\NCSUtil\NCSExtent.cpp" />
+    <ClCompile Include="..\C\NCSUtil\NCSExtents.cpp" />
+    <ClCompile Include="..\C\NCSUtil\NCSLog.cpp" />
+    <ClCompile Include="..\C\NCSUtil\NCSMutex.cpp" />
+    <ClCompile Include="..\C\NCSUtil\NCSObject.cpp" />
+    <ClCompile Include="..\C\NCSUtil\NCSObjectList.cpp" />
+    <ClCompile Include="..\C\NCSUtil\NCSPoint.cpp" />
+    <ClCompile Include="..\C\NCSUtil\NCSPrefs.cpp" />
+    <ClCompile Include="..\C\NCSUtil\NCSPrefsWin.cpp" />
+    <ClCompile Include="..\C\NCSUtil\NCSRasterCoordinateConverter.cpp" />
+    <ClCompile Include="..\C\NCSUtil\NCSScreenPoint.cpp" />
+    <ClCompile Include="..\C\NCSUtil\NCSServerState.cpp" />
+    <ClCompile Include="..\C\NCSUtil\NCSString.cpp" />
+    <ClCompile Include="..\C\NCSUtil\NCSThread.cpp" />
+    <ClCompile Include="..\C\NCSUtil\NCSWorldPoint.cpp" />
+    <ClCompile Include="..\C\NCSUtil\pool.c" />
+    <ClCompile Include="..\C\NCSUtil\quadtree.cpp" />
+    <ClCompile Include="..\C\NCSUtil\queue.c" />
+    <ClCompile Include="..\C\NCSUtil\thread.c" />
+    <ClCompile Include="..\C\NCSUtil\timer.c" />
+    <ClCompile Include="..\C\NCSUtil\util.c" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\include\ECW.h" />
+    <ClInclude Include="..\include\NCSMisc.h" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>
