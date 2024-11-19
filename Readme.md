@@ -1,9 +1,7 @@
-Compiler: Microsoft Visual Studio 2008
+1. If you need a single `libecwj2.dll` use `Source\NCSBuildQmake\libecwj2_*.sln`
 
-Use *libecwj2\Source\NCSBuildQmake\libecwj2_win32_vc90.vcproj* if you need a single `libecwj2.dll`
+2. If you need `NCSEcw.dll`, `NCSEcwC.dll`, `NCScnet.dll` and `NCSUtil.dll` use `Source\C\NCSEcw\NCSEcw\NCSEcw.sln`
 
-or
+Precompiled dll's available in the [Releases](https://github.com/sasgis/libecwj2/releases) section.
 
-use *libecwj2\Source\C\NCSEcw\NCSEcw\NCSEcw.sln* if you need `NCSEcw.dll`, `NCSEcwC.dll`, `NCScnet.dll` and `NCSUtil.dll`
-
-Precompiled dll's for Win32 available in the Releases section.
+*Tested with Microsoft Visual Studio 2008, 2015 compilers*
