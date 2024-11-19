@@ -47,6 +47,12 @@ bool CNCSThread::Spawn(void *pData, bool bCreateSuspended) {
 	//void **pStartData = (void **)NCSMalloc(2 * sizeof(void*), TRUE);
 	//pStartData[0] = (void*)this;
 	//pStartData[1] = pData;
+	if (m_Thread != NCS_NULL_THREAD_ID)
+	{
+		//fprintf( stderr, "Cleanup old threadinfo in spawn()\n" );
+		FreeInfo();
+		m_Thread = NCS_NULL_THREAD_ID;
+	}
 	m_pData = pData;
 	m_bRun = true;
 	return(NCSThreadSpawn(&m_Thread, CNCSThread::ThreadFunc, (void*)this, bCreateSuspended)==TRUE);
